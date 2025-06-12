@@ -1,8 +1,10 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 from professions import city_areas
+import os
 
-TOKEN = "7549868964:AAHN6SkbcGhwpQGisdYgwFu8WmUaS5fMH9w"
+TOKEN = os.getenv("BOT_TOKEN")
+
 # Сначала определяем start
 async def greet(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [[InlineKeyboardButton("▶️ Начать", callback_data="start_button")]]
