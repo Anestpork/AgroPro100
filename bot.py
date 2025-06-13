@@ -1,9 +1,23 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 from professions import city_areas
+from datetime import datetime, time
+import sys
 import os
 
 TOKEN = os.getenv("BOT_TOKEN")
+
+#часы работы
+now = datetime.now().time()  # по UTC+3
+
+start = time(5, 0)
+end = time(18, 0)
+
+if not (start <= now <= end):
+    print("Не рабочее время")
+    sys.exit()
+
+print("Бот запускается")
 
 # Сначала определяем start
 async def greet(update: Update, context: ContextTypes.DEFAULT_TYPE):
