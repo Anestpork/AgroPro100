@@ -10,7 +10,7 @@ TOKEN = os.getenv("BOT_TOKEN")
 #часы работы
 now = datetime.now().time()  # по UTC+3
 
-start = time(5, 0)
+start = time(6, 0)
 end = time(18, 0)
 
 if not (start <= now <= end):
