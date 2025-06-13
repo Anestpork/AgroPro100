@@ -117,7 +117,7 @@ async def handle_interview_prompt(update: Update, context: ContextTypes.DEFAULT_
     else:
         text = "❗ Видео пока недоступно."
 
-    await query.message.reply_text(text)
+    await query.message.reply_text(text, parse_mode="Markdown")
 
     # Повторить клавиатуру выбора профессии
     area = city_areas[area_key]
